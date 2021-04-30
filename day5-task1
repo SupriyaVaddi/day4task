@@ -1,0 +1,84 @@
+public class Counting
+{
+String hasUpper(String str)
+{
+int count=0;
+String ret1="";
+char[] ar=str.toCharArray();
+for(int i=0;i<ar.length;i++)
+{
+if(ar[i]>='A' && ar[i]<='Z')
+{
+count++;
+ret1="yes";
+break;
+}
+}
+if(count==0)
+ret1="no";
+return ret1;
+}
+
+String hasNumber(String data)
+{
+String ret2="";
+char[] ar3=data.toCharArray();
+for(int i=0;i<ar3.length;i++)
+{
+if(ar3[i]=='0'  || ar3[i]=='1' || ar3[i]=='2' || ar3[i]=='3' || ar3[i]=='4' || ar3[i]=='5' || ar3[i]=='6' || ar3[i]=='7' || ar3[i]=='8' || ar3[i]=='9')
+{
+ret2="yes";
+break;
+}
+else
+ret2="no";
+}
+return ret2;
+}
+
+boolean isCapsOnly(String data)
+{
+
+int count=0;
+boolean tf=false;
+
+char[] ar1=data.toCharArray();
+for(int i=0;i<ar1.length;i++)
+{
+if(ar1[i]>='A' && ar1[i]<='Z')
+{
+count++;
+}
+if(count==ar1.length)
+tf=true;
+else
+tf=false;
+}
+return tf;
+}
+
+int countCaps(String data)
+{
+int count=0;
+char[] ar4=data.toCharArray();
+for(int i=0;i<ar4.length;i++)
+{
+if(ar4[i]>='A' && ar4[i]<='Z')
+count++;
+}
+return count;
+}
+public static void main(String[] args)
+{
+String test="SUPRIYa";
+Counting counting=new Counting();
+ String res=counting.hasUpper(test);
+String res2=counting.hasNumber(test);
+boolean res1=counting.isCapsOnly(test);
+int res3=counting.countCaps(test);
+System.out.println(res);
+System.out.println(res2);
+System.out.println(res1);
+System.out.println(res3);
+}
+}
