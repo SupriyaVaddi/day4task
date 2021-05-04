@@ -1,0 +1,128 @@
+public class Daysix
+{
+int sum(int ar[])
+{
+int sum=0;
+for(int i=0;i<ar.length;i++)
+{
+sum+=ar[i];
+}
+return sum;
+}
+
+int max(int ar[])
+{
+int max=0;
+for(int i=0;i<ar.length;i++)
+{
+if(ar[i]>max)
+max=ar[i];
+}
+return max;
+}
+
+int min(int ar[])
+{
+int min=ar[0];
+for(int i=1;i<ar.length;i++)
+{
+if(ar[i]<min)
+min=ar[i];
+}
+return min;
+}
+void eveodd(int ar[])
+{
+int ce=0,co=0;
+for(int i=0;i<ar.length;i++)
+{
+if(ar[i]%2==0)
+ce++;
+else
+co++;
+}
+System.out.println("no of even "+ce);
+System.out.println("no of odd "+co);
+}
+int count3(int ar[])
+{
+int count=0;
+for(int i=0;i<ar.length;i++)
+{
+if(ar[i]%3==0)
+count++;
+}
+return count;
+}
+public static void main(String args[])
+{
+int[] roll={23,29,3,7,1023,92};
+String name="supriya vaddi";
+Daysix ds=new Daysix();
+int res1=ds.sum(roll);
+System.out.println("sum " + res1);
+int res2=ds.max(roll);
+System.out.println("max " + res2);
+int res3=ds.min(roll);
+System.out.println("min " + res3);
+ds.eveodd(roll);
+int res5=ds.count3(roll);
+System.out.println("no of div by 3 is " + res5);
+}
+}
+----------------------------------------------------------------------------
+package Test;
+public class Stringreverse
+ {
+public static String hello = "Hello";
+public static void main(String[] args){
+System.out.println(reverseString(hello));
+}
+public static String reverseString(String s) 
+{
+char c[] = s.toCharArray();
+int i = 0, j = c.length - 1;
+while (i < j) 
+{
+char tmp = c[i];
+c[i] = c[j];
+c[j] = tmp;
+i++;
+j--;
+}
+return new String(c);
+}
+}
+
+
+----------------------------------------------------------------------
+
+
+package Test;
+public class Stringrevupposition {		
+public static void main(String[] args) {			
+String hello="HeLloWorld";
+char[]ar=hello.toCharArray();	
+int index=0;	
+for(int i=ar.length1;i>=0;i-)	
+{	
+     if(ar[index]>96&&ar[index<123)
+{	
+	if(ar[i]>64&&ar[i<91)
+	System.out.print((char(ar[i]+32));	else	
+	System.out.print(ar[i]);		
+}	
+else if(ar[index]>64&&ar[index<91)		
+{	
+ if(ar[i]>96&&ar[i<123)				
+System.out.print((char(ar[i]-32));	
+else	
+System.out.print(ar[i]);	
+}						
+index++;	
+	}	
+	}	
+	}
+
+
+
