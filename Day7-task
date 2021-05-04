@@ -1,0 +1,220 @@
+package pack1;
+interface Number
+{
+boolean phoneNumberFormat(String Number);
+
+}
+
+abstract class country implements Number{}
+
+class India extends country 
+{
+public boolean phoneNumberFormat(String Number)
+{
+	char[] ar=Number.toCharArray();
+	int len=ar.length;
+	boolean ret=true;
+	
+	if(ar[0]=='9' && ar[1]=='1' && ar[2]=='-')
+	{
+		if(len==13)
+		{
+			for(int i=3;i<ar.length;i++)
+			{
+				if(ar[i]=='0' || ar[i]=='1' ||ar[i]=='2' ||ar[i]=='3' ||ar[i]=='4' ||ar[i]=='5' ||ar[i]=='6' ||ar[i]=='7' ||ar[i]=='8' ||ar[i]=='9')
+					ret=true;	
+				else
+				{
+					ret=false;
+					break;	
+				}
+			}
+		}
+		else
+			ret=false;
+	}
+	else
+		ret=false;
+	
+return ret;		
+	
+}
+
+}
+
+
+class Qatar extends country
+{
+	public boolean phoneNumberFormat(String Number)
+	{
+		char[] ar=Number.toCharArray();
+		int len=ar.length;
+		boolean ret=true;
+		if(ar[0]=='+' && ar[1]=='9' && ar[2]=='7' && ar[3]=='4' && ar[4]==' ')
+		{
+			if(len==14)
+			{
+				for(int i=5;i<ar.length;i++)
+				{
+					if(ar[9]=='-')
+						continue;
+					if(i!=9)
+					{
+					 if(ar[i]=='0' || ar[i]=='1' ||ar[i]=='2' ||ar[i]=='3' ||ar[i]=='4' ||ar[i]=='5' ||ar[i]=='6' ||ar[i]=='7' ||ar[i]=='8' ||ar[i]=='9')
+						ret=true;	
+					 else
+					 {
+						ret=false;
+						break;	
+					 }
+					}
+				}
+			}
+			else
+				ret=false;
+		}
+		else
+			ret=false;
+		return ret;
+	}
+}
+
+class Brazil extends country
+{
+	public boolean phoneNumberFormat(String Number)
+	{
+		char[] ar=Number.toCharArray();
+		int len=ar.length;
+		boolean ret=true;
+		if(ar[0]=='+' && ar[1]=='5' && ar[2]=='5' && ar[3]==' ' && ar[6]==' ' && ar[12]=='-')
+		{
+			if(len==17)
+			{
+				for(int i=4;i<ar.length;i++)
+				{
+					if(ar[i]==' ' || ar[i]=='-' )
+						continue;
+					
+					 if(ar[i]=='0' || ar[i]=='1' ||ar[i]=='2' ||ar[i]=='3' ||ar[i]=='4' ||ar[i]=='5' ||ar[i]=='6' ||ar[i]=='7' ||ar[i]=='8' ||ar[i]=='9')
+						ret=true;	
+					 else
+					 {
+						ret=false;
+						break;	
+					 }
+					
+				}
+			}
+			else
+				ret=false;
+		}
+		else
+			ret=false;
+		return ret;
+	}
+	
+		
+}
+
+
+class Norway extends country
+{
+	public boolean phoneNumberFormat(String Number)
+	{
+		char[] ar=Number.toCharArray();
+		int len=ar.length;
+		boolean ret=true;
+		if(ar[0]=='+' && ar[1]=='4' && ar[2]=='7' && ar[3]=='-' && ar[6]=='-' && ar[9]=='-' && ar[12]=='-')
+		{
+			
+			if(len==15)
+			{
+				for(int i=4;i<ar.length;i++)
+				{
+					if(ar[i]==' ' || ar[i]=='-' )
+						continue;
+					
+					 if(ar[i]=='0' || ar[i]=='1' ||ar[i]=='2' ||ar[i]=='3' ||ar[i]=='4' ||ar[i]=='5' ||ar[i]=='6' ||ar[i]=='7' ||ar[i]=='8' ||ar[i]=='9')
+						ret=true;	
+					 else
+					 {
+						ret=false;
+						break;	
+					 }
+					
+				}
+			}
+			else
+				ret=false;
+		}
+		else
+			ret=false;
+		return ret;
+		
+	}
+}
+
+class Turkey extends country
+{
+	public boolean phoneNumberFormat(String Number)
+	{
+		char[] ar=Number.toCharArray();
+		int len=ar.length;
+		boolean ret=true;
+		if(ar[0]=='+' && ar[1]=='9' && ar[2]=='0' && ar[3]==' ' && ar[7]=='-' )
+		{
+			if(len==14)
+			{
+				for(int i=4;i<ar.length;i++)
+				{
+					if(ar[i]==' ' || ar[i]=='-' )
+						continue;
+					
+					 if(ar[i]=='0' || ar[i]=='1' ||ar[i]=='2' ||ar[i]=='3' ||ar[i]=='4' ||ar[i]=='5' ||ar[i]=='6' ||ar[i]=='7' ||ar[i]=='8' ||ar[i]=='9')
+						ret=true;	
+					 else
+					 {
+						ret=false;
+						break;	
+					 }
+					
+				}
+			}
+			else
+				ret=false;
+		}
+		else
+			ret=false;
+		return ret;
+		
+	}
+}
+
+
+public class BookTicket {
+	public static void main(String[] args)
+	{
+		String str="91-7780356699";
+		String str1="+974 3399-9999";
+		String str2="+55 15 78945-5645";
+		String str3="+47-49-99-99-99";
+		String str4="+90 509-999999";
+		India ind=new India();
+		Qatar qat=new Qatar();
+		Brazil brz=new Brazil();
+		Norway nor=new Norway();
+		Turkey turk=new Turkey();
+		boolean res1=ind.phoneNumberFormat(str);
+		boolean res2=qat.phoneNumberFormat(str1);
+		boolean res3=brz.phoneNumberFormat(str2);
+		boolean res4=nor.phoneNumberFormat(str3);
+		boolean res5=turk.phoneNumberFormat(str4);
+		System.out.println("India " + res1);
+		System.out.println("Qatar " + res2);
+		System.out.println("Brazil " + res3);
+		System.out.println("Norway " +res4);
+		System.out.println("Turkey " + res5);
+		
+	}
+
+}
