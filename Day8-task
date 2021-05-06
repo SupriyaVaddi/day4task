@@ -1,0 +1,113 @@
+package pack1;
+
+public class Showroom {
+		private String city;
+	private String carname;
+	private String carmaker;
+	private String carclr;
+public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getCarname() {
+		return carname;
+	}
+
+	public void setCarname(String carname) {
+		this.carname = carname;
+	}
+
+	public String getCarmaker() {
+		return carmaker;
+	}
+
+	public void setCarmaker(String carmaker) {
+		this.carmaker = carmaker;
+	}
+
+	public String getCarclr() {
+		return carclr;
+	}
+
+	public void setCarclr(String carclr) {
+		this.carclr = carclr;
+	}
+
+	public Showroom(String city, String carname, String carmaker, String carclr) {
+		super();
+		this.city = city;
+		this.carname = carname;
+		this.carmaker = carmaker;
+		this.carclr = carclr;
+	}
+	@Override
+	public String toString() {
+		return "Showroom [srname=" + srname + ", city=" + city + ", carname=" + carname + ", carmaker=" + carmaker
+				+ ", carclr=" + carclr + "]";
+	}
+	}
+  ----------------------------------------------------------------------------------------------------------------------
+  
+  package pack1;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+import java.io.*;
+
+public class Cars {
+
+	public static void main(String[] args)
+	{
+		Showroom s1=new Showroom("Srikakulam","carname1","abc","red");
+		Showroom s2=new Showroom("vizag","carname2","pqr","black");
+		Showroom s3=new Showroom("vizayanagaram","carname3","xyz","white");
+		ArrayList<Showroom> showroom1=new ArrayList<>();
+		showroom1.add(s1);
+		showroom1.add(s2);
+		showroom1.add(s3);
+		Showroom s4=new Showroom("Srikakulam","carname4","abc","red");
+		Showroom s5=new Showroom("vizag","carname2","pqr","black");
+		Showroom s6=new Showroom("vizayanagaram","carname1","klm","cement");
+		ArrayList<Showroom> showroom2=new ArrayList<>();
+		showroom2.add(s4);
+		showroom2.add(s5);
+		showroom2.add(s6);
+		Showroom s7=new Showroom("Srikakulam","carname4","stu","grey");
+		Showroom s8=new Showroom("vizayanagaram","carname3","klm","white");
+		Showroom s9=new Showroom("nellore","carname2","abc","red");
+		ArrayList<Showroom> showroom3=new ArrayList<>();
+		showroom3.add(s7);
+		showroom3.add(s8);
+		showroom3.add(s9);
+		Map<String , ArrayList<Showroom>> teams=new HashMap<String, ArrayList<Showroom>>();
+		teams.put("ShowRoom1",showroom1 );
+		teams.put("ShowRoom2", showroom2);
+		teams.put("ShowRoom3", showroom3);
+		System.out.println("Enter showroom name to get details of the car");
+		Scanner sc=new Scanner(System.in);
+		String team=sc.nextLine();
+		ArrayList<Showroom> SRHTeam=teams.get(team);
+
+
+		for(Showroom showroom:SRHTeam)
+		{
+		System.out.println(showroom.getCarname());
+		}
+
+	}
+		
+}
+
+
+  
+  
+  
+  
+  
+  
+  
